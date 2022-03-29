@@ -48,7 +48,9 @@ if uploaded_file is not None:
 		
 		label, argmax_data = teachable_machine_classification(image, 'keras_model.h5')
 		
-		st.write(argmax_data[0][label])
+		percentage = argmax_data[0][label]
+		
+		'{percent:.2%}'.format(percent=percentage)
 
 		if label == 0:
 		  material = "cardboard"
