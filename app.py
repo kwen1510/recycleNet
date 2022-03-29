@@ -67,5 +67,6 @@ if uploaded_file is not None:
 		else:
 		  material = "No idea"
 
-		st.header(f"Material: {material}, {max_percentage} confidence")
+		st.header(f"Material: {material}")
+		st.write(f"Confidence: {max_percentage}")
 		st.image(image, use_column_width=True)
