@@ -28,7 +28,8 @@ def teachable_machine_classification(img, weights_file):
 
     # run the inference
     prediction = model.predict(data)
-    return np.argmax(prediction) # return position of the highest probability
+    return prediction # return position of the highest probability
+#     return np.argmax(prediction) # return position of the highest probability
 
 
 ### Streamlit code ###
