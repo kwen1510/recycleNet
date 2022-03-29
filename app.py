@@ -42,7 +42,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["png","jpg","jpeg"]
 
 if uploaded_file is not None:
 	image = Image.open(uploaded_file)
-	st.image(image, caption='Uploaded MRI.', use_column_width=True)
+	st.image(image, use_column_width=True)
 
 	label = teachable_machine_classification(image, 'keras_model.h5')
 
