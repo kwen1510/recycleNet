@@ -43,7 +43,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["png","jpg","jpeg"]
 if uploaded_file is not None:
 	image = Image.open(uploaded_file)
 	
-	with st.spinner('Wait for it...'):
+	with st.spinner('Analysing...'):
 		
 		label = teachable_machine_classification(image, 'keras_model.h5')
 
