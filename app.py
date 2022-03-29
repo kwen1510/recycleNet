@@ -60,6 +60,8 @@ if uploaded_file is not None:
 		  material = "plastic"
 		elif label == 5:
 		  material = "trash"
+		else:
+		  material = "No idea"
 
 		st.header(f"Material: {material}")
 		st.image(image, use_column_width=True)
