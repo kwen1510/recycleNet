@@ -28,7 +28,7 @@ def teachable_machine_classification(img, weights_file):
 
     # run the inference
     prediction = model.predict(data)
-    return prediction # return position of the highest probability
+    return np.argmax(prediction), prediction # return position of the highest probability
 #     return np.argmax(prediction) # return position of the highest probability
 
 
@@ -46,9 +46,9 @@ if uploaded_file is not None:
 	
 	with st.spinner('Analysing...'):
 		
-		label = teachable_machine_classification(image, 'keras_model.h5')
+		label, argmax_data = teachable_machine_classification(image, 'keras_model.h5')
 		
-		st.write(label)
+		st.write(argmax_data)
 
 		if label == 0:
 		  material = "cardboard"
