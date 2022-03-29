@@ -44,7 +44,7 @@ if uploaded_file is not None:
 	image = Image.open(uploaded_file)
 	st.image(image, caption='Uploaded MRI.', use_column_width=True)
 
-	label = teachable_machine_classification(image, '/keras_model.h5')
+	label = teachable_machine_classification(image, 'keras_model.h5')
 
 	if label == 0:
 	  material = "cardboard"
