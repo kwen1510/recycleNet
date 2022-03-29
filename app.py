@@ -34,9 +34,9 @@ def teachable_machine_classification(img, weights_file):
 
 ### Streamlit code ###
 
-st.title("RecycleNet")
+st.title("Can I recycle this?")
 
-st.write("Welcome to RecycleNet. Upload a photo to see what material it is.")
+st.write("Upload a photo to see what material it is.")
 
 
 uploaded_file = st.file_uploader("Choose an image...", type=["png","jpg","jpeg"])
