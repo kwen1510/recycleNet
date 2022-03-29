@@ -47,6 +47,8 @@ if uploaded_file is not None:
 	with st.spinner('Analysing...'):
 		
 		label = teachable_machine_classification(image, 'keras_model.h5')
+		
+		st.write(label)
 
 		if label == 0:
 		  material = "cardboard"
