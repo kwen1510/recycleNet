@@ -35,28 +35,30 @@ def teachable_machine_classification(img, weights_file):
 
 st.title("RecycleNet")
 
-st.write("Welcome to recycleNet. Upload a photo to see what material it is.")
+st.write("Welcome to RecycleNet. Upload a photo to see what material it is.")
 
 
 uploaded_file = st.file_uploader("Choose an image...", type=["png","jpg","jpeg"])
 
 if uploaded_file is not None:
 	image = Image.open(uploaded_file)
+	
+	with st.spinner('Wait for it...'):
+		
+		label = teachable_machine_classification(image, 'keras_model.h5')
 
-	label = teachable_machine_classification(image, 'keras_model.h5')
+		if label == 0:
+		  material = "cardboard"
+		elif label == 1:
+		  material = "glass"
+		elif label == 2:
+		  material = "metal"
+		elif label == 3:
+		  material = "paper"
+		elif label == 4:
+		  material = "plastic"
+		elif label == 5:
+		  material = "trash"
 
-	if label == 0:
-	  material = "cardboard"
-	elif label == 1:
-	  material = "glass"
-	elif label == 2:
-	  material = "metal"
-	elif label == 3:
-	  material = "paper"
-	elif label == 4:
-	  material = "plastic"
-	elif label == 5:
-	  material = "trash"
-
-	st.header(f"Material: {material}")
-	st.image(image, use_column_width=True)
+		st.header(f"Material: {material}")
+		st.image(image, use_column_width=True)
