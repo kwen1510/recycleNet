@@ -50,7 +50,7 @@ if uploaded_file is not None:
 		
 		percentage = argmax_data[0][label]
 		
-		max_percentage = '{percent:.2%}'.format(percent=percentage)
+		max_percentage = '{percent:.0%}'.format(percent=percentage)
 
 		if label == 0:
 		  material = "cardboard"
@@ -67,5 +67,5 @@ if uploaded_file is not None:
 		else:
 		  material = "No idea"
 
-		st.header(f"Material: {material}, {max_percentage}")
+		st.header(f"Material: {material}, {max_percentage} confidence")
 		st.image(image, use_column_width=True)
